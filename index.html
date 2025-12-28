@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private Chat Rooms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>🔐 Private Chat Rooms</h2>
+
+    <!-- ADMIN SECTION -->
+    <div class="box">
+    <h3>Admin Panel</h3>
+    <input type="text" id="adminName" placeholder="Enter Admin Name">
+    <input type="text" id="adminRoom" placeholder="Enter Room Name">
+    <button onclick="createRoom()">Create Room</button>
+    <p id="roomCode" class="code"></p>
+</div>
+
+    <hr>
+
+    <!-- USER SECTION -->
+    <div class="box">
+        <h3>User Join</h3>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="text" id="joinCode" placeholder="Enter Room Code">
+       <button onclick="joinRoom()">Join Room</button>
+
+    </div>
+
+    <!-- CHAT AREA -->
+    <div id="chatSection" style="display:none;">
+        <h3>Chat Room</h3>
+        <div id="chatBox"></div>
+
+        <input type="text" id="msg" placeholder="Type message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- SOCKET.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
